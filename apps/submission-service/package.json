@@ -1,0 +1,28 @@
+{
+  "name": "submission-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@bull-board/api": "^6.7.4",
+    "@bull-board/express": "^6.7.4",
+    "@repo/db": "^1.0.0",
+    "bull": "^4.16.5",
+    "bull-board": "^1.7.2",
+    "bullmq": "^5.40.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9"
+  }
+}

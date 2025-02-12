@@ -1,0 +1,204 @@
+
+    │Id: '11479bbbb9a5932983039b7a867bbf1b212c6c0dacc8816cd795ef60a15fb3a8',
+    │Created: '2025-02-09T06:13:19.492339581Z',
+    │Path: 'python3',
+    │Args: [
+      '/app/main.py'
+    ],
+    │State: {
+      │Status: 'removing',
+      │Running: false,
+      │Paused: false,
+      │Restarting: false,
+      │OOMKilled: false,
+      │Dead: true,
+      │Pid: 0,
+      │ExitCode: 0,
+      │Error: '',
+      │StartedAt: '2025-02-09T06:13:19.530370293Z',
+      │FinishedAt: '2025-02-09T06:13:19.63771593Z'│
+    },
+    │Image: 'sha256:096343841dd9d6129087a72170c0d3cd51e64a0c00934029a8927625637f51d1',
+    │ResolvConfPath: '',
+    │HostnamePath: '/var/snap/docker/common/var-lib-docker/containers/11479bbbb9a5932983039b7a867bbf1b212c6c0dacc8816cd795ef60a │ 15fb3a8/hostname',
+    │HostsPath: '',
+    │LogPath: '/var/snap/docker/common/var-lib-docker/containers/11479bbbb9a5932983039b7a867bbf1b212c6c0dacc8816cd795ef60a15fb3 │ a8/11479bbbb9a5932983039b7a867bbf1b212c6c0dacc8816cd795ef60a15fb3a8-json.log',
+    │Name: '/code-runner-2582f999-02ee-4646-be2d-aa4d626d4cea',
+    │RestartCount: 0,
+    │Driver: 'overlay2',
+    │Platform: 'linux',
+    │MountLabel: '',
+    │ProcessLabel: '',
+    │AppArmorProfile: 'docker-default',
+    │ExecIDs: null,
+    │HostConfig: {
+      │Binds: [
+        │'/home/divyansh/Projects/Codellosium/apps/worker-service/temp_code_files/0bb2a757-c181-4365-b095-d23387b10153/main.py: │ /app/main.py'│
+      ],
+      │ContainerIDFile: '',
+      │LogConfig: {
+        Type: 'json-file',
+        Config: {
+          
+        }
+      },
+      │NetworkMode: 'bridge',
+      │PortBindings: null,
+      │RestartPolicy: {
+        Name: 'no',
+        MaximumRetryCount: 0
+      },
+      │AutoRemove: true,
+      │VolumeDriver: '',
+      │VolumesFrom: null,
+      │ConsoleSize: [
+        0,
+        0
+      ],
+      │CapAdd: null,
+      │CapDrop: null,
+      │CgroupnsMode: 'host',
+      │Dns: null,
+      │DnsOptions: null,
+      │DnsSearch: null,
+      │ExtraHosts: null,
+      │GroupAdd: null,
+      │IpcMode: 'private',
+      │Cgroup: '',
+      │Links: null,
+      │OomScoreAdj: 0,
+      │PidMode: '',
+      │Privileged: false,
+      │PublishAllPorts: false,
+      │ReadonlyRootfs: true,
+      │SecurityOpt: null,
+      │UTSMode: '',
+      │UsernsMode: '',
+      │ShmSize: 67108864,
+      │Runtime: 'runc',
+      │Isolation: '',
+      │CpuShares: 512,
+      │Memory: 268435456,
+      │NanoCpus: 0,
+      │CgroupParent: '',
+      │BlkioWeight: 0,
+      │BlkioWeightDevice: null,
+      │BlkioDeviceReadBps: null,
+      │BlkioDeviceWriteBps: null,
+      │BlkioDeviceReadIOps: null,
+      │BlkioDeviceWriteIOps: null,
+      │CpuPeriod: 0,
+      │CpuQuota: 0,
+      │CpuRealtimePeriod: 0,
+      │CpuRealtimeRuntime: 0,
+      │CpusetCpus: '',
+      │CpusetMems: '',
+      │Devices: null,
+      │DeviceCgroupRules: null,
+      │DeviceRequests: null,
+      │MemoryReservation: 0,
+      │MemorySwap: 536870912,
+      │MemorySwappiness: null,
+      │OomKillDisable: false,
+      │PidsLimit: null,
+      │Ulimits: null,
+      │CpuCount: 0,
+      │CpuPercent: 0,
+      │IOMaximumIOps: 0,
+      │IOMaximumBandwidth: 0,
+      │MaskedPaths: [
+        │'/proc/asound',
+        │'/proc/acpi',
+        │'/proc/kcore',
+        │'/proc/keys',
+        │'/proc/latency_stats',
+        │'/proc/timer_list',
+        │'/proc/timer_stats',
+        │'/proc/sched_debug',
+        │'/proc/scsi',
+        │'/sys/firmware',
+        │'/sys/devices/virtual/powercap'│
+      ],
+      │ReadonlyPaths: [
+        │'/proc/bus',
+        │'/proc/fs',
+        │'/proc/irq',
+        │'/proc/sys',
+        │'/proc/sysrq-trigger'│
+      ]│
+    },
+    │GraphDriver: {
+      │Data: {
+        │LowerDir: '/var/snap/docker/common/var-lib-docker/overlay2/1ea584a65c6ede5c8c414de42826a249ce4e464d012137f9cbffd442a9a │ 2840c-init/diff:/var/snap/docker/common/var-lib-docker/overlay2/2a28d7316cdf477b606e3d40750b2cc98972c9f8ad16da37927c685c665c │ 7042/diff:/var/snap/docker/common/var-lib-docker/overlay2/0be8a0bae1585da0e0615b0a53a889e050c723a25844f635e2a9a19a4fc90084/d │ iff:/var/snap/docker/common/var-lib-docker/overlay2/b1e9c4284f7de3ecdbe075d741396ebee3c0a8acf92462c192c540a8f57a8d18/diff:/v │ ar/snap/docker/common/var-lib-docker/overlay2/9e7bffcd637ba22ae052878fe078a75b11cc08eecf7df4053649e4bb8a50a05f/diff',
+        │MergedDir: '/var/snap/docker/common/var-lib-docker/overlay2/1ea584a65c6ede5c8c414de42826a249ce4e464d012137f9cbffd442a9 │ a2840c/merged',
+        │UpperDir: '/var/snap/docker/common/var-lib-docker/overlay2/1ea584a65c6ede5c8c414de42826a249ce4e464d012137f9cbffd442a9a │ 2840c/diff',
+        │WorkDir: '/var/snap/docker/common/var-lib-docker/overlay2/1ea584a65c6ede5c8c414de42826a249ce4e464d012137f9cbffd442a9a2 │ 840c/work'│
+      },
+      │Name: 'overlay2'│
+    },
+    │Mounts: [
+      │{
+        │Type: 'bind',
+        │Source: '/home/divyansh/Projects/Codellosium/apps/worker-service/temp_code_files/0bb2a757-c181-4365-b095-d23387b10153/ │ main.py',
+        │Destination: '/app/main.py',
+        │Mode: '',
+        │RW: true,
+        │Propagation: 'rprivate'│
+      }│
+    ],
+    │Config: {
+      │Hostname: '11479bbbb9a5',
+      │Domainname: '',
+      │User: '',
+      │AttachStdin: false,
+      │AttachStdout: false,
+      │AttachStderr: false,
+      │Tty: false,
+      │OpenStdin: true,
+      │StdinOnce: false,
+      │Env: [
+        │'PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+        │'LANG=C.UTF-8',
+        │'GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568',
+        │'PYTHON_VERSION=3.9.21',
+        │'PYTHON_SHA256=3126f59592c9b0d798584755f2bf7b081fa1ca35ce7a6fea980108d752a05bb1'│
+      ],
+      │Cmd: [
+        'python3',
+        '/app/main.py'
+      ],
+      │Image: 'python:3.9-slim',
+      │Volumes: null,
+      │WorkingDir: '/app',
+      │Entrypoint: null,
+      │NetworkDisabled: true,
+      │OnBuild: null,
+      │Labels: {
+        
+      }│
+    },
+    │NetworkSettings: {
+      │Bridge: '',
+      │SandboxID: '',
+      │SandboxKey: '',
+      │Ports: {
+        
+      },
+      │HairpinMode: false,
+      │LinkLocalIPv6Address: '',
+      │LinkLocalIPv6PrefixLen: 0,
+      │SecondaryIPAddresses: null,
+      │SecondaryIPv6Addresses: null,
+      │EndpointID: '',
+      │Gateway: '',
+      │GlobalIPv6Address: '',
+      │GlobalIPv6PrefixLen: 0,
+      │IPAddress: '',
+      │IPPrefixLen: 0,
+      │IPv6Gateway: '',
+      │MacAddress: '',
+      │Networks: {
+        
+      }│
+    }│
+  

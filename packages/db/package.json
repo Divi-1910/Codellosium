@@ -1,7 +1,11 @@
 {
-  "name": "ui",
+  "name": "@repo/db",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./db.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

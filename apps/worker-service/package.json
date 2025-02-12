@@ -1,0 +1,27 @@
+{
+  "name": "worker-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@repo/db": "^1.0.0",
+    "axios": "^1.7.9",
+    "bullmq": "^5.40.2",
+    "dockerode": "^4.0.4",
+    "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7",
+    "redis": "^4.7.0",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.0.5"
+  }
+}
