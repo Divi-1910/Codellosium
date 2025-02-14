@@ -18,7 +18,6 @@ export const OutputTerminal = ({ output, status }) => {
   );
 };
 
-// Reusable component for tab navigation between Input and Output
 const PlayGroundTabs = ({
   input,
   output,
