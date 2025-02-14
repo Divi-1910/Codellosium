@@ -145,7 +145,6 @@ const CodeEditor = ({
       )}
     >
       <div className="flex-1 flex flex-col relative">
-        {/* Header Section */}
         <div className="flex items-center justify-between p-4 bg-gray-900/50 border-b rounded-xl border-blue-500/20 backdrop-blur-md">
           <div className="flex items-center gap-4 text-white m-2">
             {" "}

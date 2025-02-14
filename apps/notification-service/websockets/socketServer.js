@@ -18,6 +18,7 @@ export const initSocketServer = (httpServer) => {
     try {
       const cookies = cookie.parse(socket.handshake.headers.cookie || "");
       const accessToken = cookies.token;
+      console.log("access Token is :", accessToken);
       if (!accessToken) {
         return next(
           new Error("Authentication error: No access token found in cookies")

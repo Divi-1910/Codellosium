@@ -14,3 +14,16 @@ export const executeCode = async (code, language, input, type) => {
     throw error.response?.data || error;
   }
 };
+
+export const getSubmissions = async (offset, limit) => {
+  try {
+    const response = await api.get("/", {
+      params: { offset, limit },
+      withCredentials: true
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Error in Fetching All Submissions : ", error);
+    throw error.response?.data || error;
+  }
+};

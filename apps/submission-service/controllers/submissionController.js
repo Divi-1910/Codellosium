@@ -70,16 +70,26 @@ export const getSubmissionStatus = async (req, res) => {
 
 export const getAllSubmission = async (req, res) => {
   try {
-    if (!req.user || !req.user._id) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
-    const { type } = req.query;
-    const filter = { user: req.user._id };
-    if (type) {
-      filter.type = type;
-    }
-    const submissions = await Submission.find(filter).sort({ createdAt: -1 });
-    res.status(200).json({ submissions });
+    // Get pagination parameters from query, with defaults.
+    const { offset = 0, limit = 10 } = req.query;
+    const numericOffset = parseInt(offset, 10);
+    const numericLimit = parseInt(limit, 10);
+
+    // Optional: if you have authentication middleware, filter by user:
+    // const userId = req.user._id;
+    // const filter = { user: userId };
+    // For now, we'll fetch all submissions.
+    const filter = {};
+
+    // Get the total count and the paginated submissions.
+    const totalCount = await Submission.countDocuments(filter);
+    const submissions = await Submission.find(filter)
+      .sort({ createdAt: -1 })
+      .skip(numericOffset)
+      .limit(numericLimit)
+      .lean();
+
+    res.status(200).json({ submissions, totalCount });
   } catch (error) {
     console.error("Error fetching submissions:", error);
     res.status(500).json({ error: "Failed to fetch submissions" });
