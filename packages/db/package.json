@@ -7,10 +7,13 @@
     ".": "./db.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seed": "node scripts/seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mongoose": "^8.10.1"
+  }
 }

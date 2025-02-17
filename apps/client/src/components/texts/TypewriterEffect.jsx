@@ -94,21 +94,28 @@ export const TypewriterEffectSmooth = ({
       text: word.text.split("")
     };
   });
+
   const renderWords = () => {
     return (
       <div>
         {wordsArray.map((word, idx) => {
           return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
-                <span
-                  key={`char-${index}`}
-                  className={cn(`dark:text-white text-black `, word.className)}
-                >
-                  {char}
-                </span>
-              ))}
-            </div>
+            <>
+              <div key={`word-${idx}`} className="inline-block">
+                {word.text.map((char, index) => (
+                  <span
+                    key={`char-${index}`}
+                    className={cn(` text-black `, word.className)}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </div>
+              {/* Add space after each word except the last one */}
+              {idx < wordsArray.length - 1 && (
+                <span className="inline-block mr-2">&nbsp;</span>
+              )}
+            </>
           );
         })}
       </div>
@@ -137,8 +144,8 @@ export const TypewriterEffectSmooth = ({
             whiteSpace: "nowrap"
           }}
         >
-          {renderWords()}{" "}
-        </div>{" "}
+          {renderWords()}
+        </div>
       </motion.div>
       <motion.span
         initial={{
@@ -149,7 +156,6 @@ export const TypewriterEffectSmooth = ({
         }}
         transition={{
           duration: 0.8,
-
           repeat: Infinity,
           repeatType: "reverse"
         }}
