@@ -123,8 +123,6 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-12 h-screen py-4"
               >
-                <RetroGrid angle={65} cellSize={60} opacity={1} />
-
                 <div className="text-center space-y-4">
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}

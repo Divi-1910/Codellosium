@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "./Cards/ThreeDCard";
 import { getProblems } from "../api/problem";
 import { TypewriterEffectSmooth } from "./texts/TypewriterEffect";
+import { useNavigate } from "react-router-dom";
 
 const words = [
   {
@@ -28,6 +29,7 @@ const Arena = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
+  const navigate = useNavigate();
 
   const fetchProblems = async () => {
     setLoading(true);
@@ -51,6 +53,10 @@ const Arena = () => {
       ? problems
       : problems.filter((problem) => problem.difficulty === selectedDifficulty);
 
+  const handleSolveChallenge = (problemId) => {
+    navigate(`/battle/${problemId}`);
+  };
+
   return (
     <div className="min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -69,11 +75,12 @@ const Arena = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedDifficulty(difficulty)}
-              className={`px-4 py-2 rounded-full ${
-                selectedDifficulty === difficulty
-                  ? "bg-purple-500 text-white"
-                  : "bg-gray-800 text-gray-300"
-              } transition-all duration-200`}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200
+                ${
+                  selectedDifficulty === difficulty
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/20"
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                }`}
             >
               {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
             </motion.button>
@@ -86,7 +93,7 @@ const Arena = () => {
             animate={{ opacity: 1 }}
             className="flex justify-center items-center h-64"
           >
-            <div className="loader"></div>
+            <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
           </motion.div>
         ) : error ? (
           <motion.div
@@ -107,7 +114,7 @@ const Arena = () => {
         ) : (
           <AnimatePresence>
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -118,8 +125,12 @@ const Arena = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  className="w-full"
                 >
-                  <ProblemCard problem={problem} />
+                  <ProblemCard
+                    problem={problem}
+                    onSolve={handleSolveChallenge}
+                  />
                 </motion.div>
               ))}
             </motion.div>
@@ -130,36 +141,39 @@ const Arena = () => {
   );
 };
 
-const ProblemCard = ({ problem }) => {
+const ProblemCard = ({ problem, onSolve }) => {
   const difficultyColors = {
     easy: {
       bg: "bg-gradient-to-r from-green-500/20 via-green-100/20 to-green-500/20",
-      text: "text-green-700",
-      border: "border-green-500/30"
+      text: "text-green-400",
+      border: "border-green-500/30",
+      button: "from-green-500 to-emerald-600"
     },
     medium: {
       bg: "bg-gradient-to-r from-orange-500/20 via-orange-100/20 to-orange-500/20",
-      text: "text-orange-700",
-      border: "border-orange-500/30"
+      text: "text-orange-400",
+      border: "border-orange-500/30",
+      button: "from-orange-500 to-amber-600"
     },
     hard: {
       bg: "bg-gradient-to-r from-red-500/20 via-red-100/20 to-red-500/20",
-      text: "text-red-700",
-      border: "border-red-500/30"
+      text: "text-red-400",
+      border: "border-red-500/30",
+      button: "from-red-500 to-rose-600"
     }
   };
 
   return (
-    <CardContainer className="inter-var">
+    <CardContainer className="inter-var w-full">
       <CardBody
-        className="relative group/card w-auto sm:w-[30rem] h-auto rounded-2xl p-8 
+        className="relative group/card w-full h-full rounded-2xl p-6 
         bg-gradient-to-br from-white via-blue-50/50 to-purple-50
         border border-blue-500/10 hover:border-purple-500/50 
         transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20
         backdrop-blur-sm"
       >
         <div
-          className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-200/20 via-purple-200/10 to-transparent 
+          className="absolute inset-0 h-full w-full bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-transparent 
           opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
         />
         <div
@@ -182,18 +196,18 @@ const ProblemCard = ({ problem }) => {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-gray-600 text-sm leading-relaxed mt-4 line-clamp-3"
+          className="text-gray-400 text-sm leading-relaxed line-clamp-2"
         >
           {problem.description}
         </CardItem>
-        <div className="flex gap-2 mt-8">
-          <CardItem translateZ="100" className="group/button relative">
+        <div className="flex gap-2 mt-6">
+          <CardItem translateZ="100" className="group/button relative w-full">
             <button
-              className="px-6 py-3 rounded-lg text-sm font-semibold text-white
-              bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600
-              hover:from-blue-600 hover:via-purple-600 hover:to-purple-700
-              transition-all duration-300 shadow-lg shadow-purple-500/20
-              hover:shadow-purple-500/40 transform hover:-translate-y-0.5"
+              onClick={() => onSolve(problem._id)}
+              className={`w-full px-4 py-2 rounded-lg text-sm font-semibold text-white
+              bg-gradient-to-r ${difficultyColors[problem.difficulty].button}
+              hover:opacity-90 transition-all duration-300 shadow-lg
+              transform hover:-translate-y-0.5`}
             >
               Solve Challenge
               <span className="absolute inset-0 rounded-lg bg-white/10 opacity-0 group-hover/button:opacity-100 transition-opacity" />

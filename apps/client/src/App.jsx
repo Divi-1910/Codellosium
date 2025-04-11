@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import { isAuthenticatedSelector } from "./store/selectors/authSelectors";
 import { Toaster, toast } from "react-hot-toast";
 import NotificationListener from "./components/Listener/NotificationListener";
+import BattleGround from "./components/BattleGround";
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = useRecoilValue(isAuthenticatedSelector);
@@ -40,6 +41,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/battle/:problemId"
+            element={
+              <ProtectedRoute>
+                <BattleGround />
               </ProtectedRoute>
             }
           />

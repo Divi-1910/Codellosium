@@ -33,6 +33,8 @@ export const createSubmission = async (req, res) => {
       status: "pending"
     });
 
+    console.log(submission);
+
     const job = await submissionQueue.add("run-code", {
       submissionId: submission._id,
       user,

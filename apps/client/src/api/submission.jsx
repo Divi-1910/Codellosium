@@ -15,6 +15,22 @@ export const executeCode = async (code, language, input, type) => {
   }
 };
 
+export const executeCodeArena = async (problemId, language, input, type) => {
+  try {
+    console.log("Executing Code Arena");
+    const response = await api.post("/", {
+      problemId,
+      language,
+      type,
+      input
+    });
+    return response.data;
+  } catch (error) {
+    console.log("Submission Error : ", error.response?.data || error.message);
+    throw error.response?.data || error;
+  }
+};
+
 export const getSubmissions = async (offset, limit) => {
   try {
     const response = await api.get("/", {
